@@ -23,6 +23,11 @@ typedef struct imu_data {
   float temperature;
 } imu_data_t;
 
+typedef struct state {
+  int angle;
+  int speed;
+} state_t;
+
 void imu();
 void imu_init();
 void imu_finish();

@@ -9,6 +9,7 @@ void show_button_labels(char* right, char* center, char* left) {
   int base_left = 260;
   int text_size = 2;
 
+  M5.Lcd.setTextColor(WHITE, BLACK);
   M5.Lcd.setTextSize(text_size);
 
   if (right != NULL) {
@@ -28,6 +29,7 @@ void show_button_labels(char* right, char* center, char* left) {
 }
 
 void show_title(char* title) {
+  M5.Lcd.setTextColor(WHITE, BLACK);
   M5.Lcd.setCursor(10, 10);
   M5.Lcd.setTextSize(3);
   M5.Lcd.printf("%s", title);

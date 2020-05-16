@@ -10,7 +10,11 @@ void setting_finish() {
 }
 
 void setting() {
-  // TODO
   M5.Lcd.setCursor(60, 90);
   M5.Lcd.printf("(TODO)");
+
+  // TODO
+  // 輝度設定
+  // スリープ
+  // etc...
 }

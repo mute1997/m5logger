@@ -4,6 +4,8 @@
 #include <imu.h>
 #include <utils.h>
 
+// TODO いい感じにする (state構造体)
+int record = 0;
 int max_bank = 0;
 imu_data_t imu_data = {};
 
@@ -37,10 +39,19 @@ void show_imu_data(imu_data_t *data) {
   // show max bank
   M5.Lcd.setTextSize(2);
   M5.Lcd.setTextColor(WHITE , BLACK);
-  M5.Lcd.setCursor(240, 100);
-  M5.Lcd.printf("max:%02d", max_bank);
+  M5.Lcd.setCursor(180, 60);
+  M5.Lcd.printf("angle:");
+  M5.Lcd.setCursor(280, 60);
+  M5.Lcd.printf("%02d", max_bank);
 
-  // TODO top speed
+  // show record status
+  M5.Lcd.setTextSize(2);
+  M5.Lcd.setTextColor(WHITE, BLACK);
+  M5.Lcd.setCursor(180, 100);
+  M5.Lcd.printf("record:");
+  M5.Lcd.setCursor(280, 100);
+  M5.Lcd.setTextColor(record ? GREEN : RED, BLACK);
+  M5.Lcd.printf("%s", record ? "on " : "off");
 }
 
 void imu_init() {
@@ -61,6 +72,7 @@ void button_reset() {
 
 void button_record() {
   // TODO
+  record = !record;
 }
 
 void imu() {

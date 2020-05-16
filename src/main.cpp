@@ -11,6 +11,10 @@ int feature_ptr = 0;
 feature_t features[] = {
   {imu_init, imu_finish, imu},
   {setting_init, setting_finish, setting},
+  // TODO
+  // 盗難防止
+  // 電圧計
+  // 二酸化炭素計
 };
 
 void change_next_feature() {

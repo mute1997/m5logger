@@ -1,0 +1,16 @@
+#include <M5Stack.h>
+#include <setting.h>
+#include <utils.h>
+
+void setting_init() {
+  show_title((char*)"settings");
+}
+
+void setting_finish() {
+}
+
+void setting() {
+  // TODO
+  M5.Lcd.setCursor(60, 90);
+  M5.Lcd.printf("(TODO)");
+}
